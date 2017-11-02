@@ -30,8 +30,14 @@ class Linked_List
   end
 
   #PUSH
-  def push
-
+  def insert(value)
+    current_node = @head
+    until current_node.next_node.value <= value
+      break if current_node.next_node == nil
+      current_node  = current_node.next_node
+    end
+    next_node_object = current_node.next_node
+    current_node.next_node = Node.new(value, next_node_object)
   end
 end
 
